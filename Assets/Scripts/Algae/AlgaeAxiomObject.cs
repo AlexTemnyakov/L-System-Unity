@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using LSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LSystem
+namespace Algae
 {
     public class AlgaeAxiomObject : AxiomObject
     {
-        public override List<Action> Axiom { get; } = new List<Action>() { new AlgaeActionA() };
+        public override List<Variable> Axiom { get; } = new List<Variable>() { new VariableA() };
     }
 }

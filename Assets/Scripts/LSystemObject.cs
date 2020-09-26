@@ -11,9 +11,9 @@ namespace LSystem
 
         public GameObject axiomObject;
 
-        public GameObject ruleObject;
+        public GameObject ruleCollectionObject;
 
-        private List<Action> actions;
+        private List<Variable> variables;
 
         void Start()
         {
@@ -39,29 +39,29 @@ namespace LSystem
                 return;
             }
 
-            if (ruleObject == null)
+            if (ruleCollectionObject == null)
             {
-                Debug.LogError("The rule object is not set.");
+                Debug.LogError("The rule collection object is not set.");
                 return;
             }
 
-            if (ruleObject.GetComponent<RuleObject>() == null)
+            if (ruleCollectionObject.GetComponent<RuleCollectionObject>() == null)
             {
-                Debug.LogError("The rule object does not have the RuleObject component.");
+                Debug.LogError("The rule collection object does not have the RuleCollectionObject component.");
                 return;
             }
 
-            List<Action> axiom = axiomObject.GetComponent<AxiomObject>().Axiom;
+            List<Variable> axiom = axiomObject.GetComponent<AxiomObject>().Axiom;
 
-            Rule rule = ruleObject.GetComponent<RuleObject>().Rule;
+            RuleCollection ruleCollection = ruleCollectionObject.GetComponent<RuleCollectionObject>().RuleCollection;
 
-            actions = LSystem.Grow(axiom, rule, numberOfIteration);
+            variables = LSystem.Grow(axiom, ruleCollection, numberOfIteration);
 
             string result = "";
 
-            foreach (Action action in actions)
+            foreach (Variable variable in variables)
             {
-                result += action.ToString();
+                result += variable.ToString();
             }
 
             Debug.Log("Result:");

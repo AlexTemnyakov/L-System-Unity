@@ -6,6 +6,6 @@ namespace LSystem
 {
     public abstract class AxiomObject : MonoBehaviour
     {
-        public abstract List<Action> Axiom { get; }
+        public abstract List<Variable> Axiom { get; }
     }
 }

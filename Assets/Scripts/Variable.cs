@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace LSystem
 {
-    public abstract class Rule
+    public abstract class Variable
     {
-        public abstract List<Action> Provide(Action action);
+        public abstract override string ToString();
     }
 }
 

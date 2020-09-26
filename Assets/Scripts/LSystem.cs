@@ -6,25 +6,25 @@ namespace LSystem
 {
     public class LSystem
     {
-        public static List<Action> Grow(List<Action> axiom, Rule rule, int numberOfIterations)
+        public static List<Variable> Grow(List<Variable> axiom, RuleCollection ruleCollection, int numberOfIterations)
         {
-            List<Action> actions = new List<Action>();
+            List<Variable> variables = new List<Variable>();
 
-            actions.AddRange(axiom);
+            variables.AddRange(axiom);
 
             for (int i = 0; i < numberOfIterations; i++)
             {
-                List<Action> newActions = new List<Action>();
+                List<Variable> newVariables = new List<Variable>();
 
-                foreach (Action action in actions)
+                foreach (Variable action in variables)
                 {
-                    newActions.AddRange(rule.Provide(action));
+                    newVariables.AddRange(ruleCollection.Provide(action));
                 }
 
-                actions = newActions;
+                variables = newVariables;
             }
 
-            return actions;
+            return variables;
         }
     }
 }

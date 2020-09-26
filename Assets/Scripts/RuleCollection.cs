@@ -4,8 +4,9 @@ using UnityEngine;
 
 namespace LSystem
 {
-    public class AlgaeRuleObject : RuleObject
+    public abstract class RuleCollection
     {
-        public override Rule Rule { get; } = new AlgaeRule();
+        public abstract List<Variable> Provide(Variable variable);
     }
 }
+

@@ -1,14 +1,15 @@
-﻿using System.Collections;
+﻿using LSystem;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LSystem
+namespace FractalTree
 {
-    public class AlgaeActionPlus : Action
+    public class Zero : Variable
     {
         public override string ToString()
         {
-            return "+";
+            return "0";
         }
     }
 }
