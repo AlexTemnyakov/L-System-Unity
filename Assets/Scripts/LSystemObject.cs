@@ -7,11 +7,13 @@ namespace LSystem
     public class LSystemObject : MonoBehaviour
     {
         [Min(1)]
-        public int numberOfIteration = 10;
+        public int numberOfIterations = 10;
 
         public GameObject axiomObject;
 
         public GameObject ruleCollectionObject;
+
+        public bool printResultInConsole = true;
 
         private List<Variable> variables;
 
@@ -55,17 +57,33 @@ namespace LSystem
 
             RuleCollection ruleCollection = ruleCollectionObject.GetComponent<RuleCollectionObject>().RuleCollection;
 
-            variables = LSystem.Grow(axiom, ruleCollection, numberOfIteration);
+            variables = LSystem.Grow(axiom, ruleCollection, numberOfIterations);
 
-            string result = "";
-
-            foreach (Variable variable in variables)
+            if (printResultInConsole)
             {
-                result += variable.ToString();
-            }
+                string result = "";
 
-            Debug.Log("Result:");
-            Debug.Log(result);
+                foreach (Variable variable in variables)
+                {
+                    result += variable.ToString();
+                }
+
+                Debug.Log("Result:");
+                Debug.Log(result);
+            }
+        }
+
+        public void Clear()
+        {
+            variables = null;
+        }
+
+        public List<Variable> Variables
+        {
+            get
+            {
+                return variables;
+            }
         }
     }
 }

@@ -18,6 +18,11 @@ namespace LSystem
             {
                 __target.Grow();
             }
+
+            if (GUILayout.Button("Clear"))
+            {
+                __target.Clear();
+            }
         }
     }
 }
