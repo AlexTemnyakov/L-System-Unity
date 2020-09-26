@@ -1,15 +1,14 @@
-﻿using LSystem;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Algae
+namespace LSystem
 {
-    public class VariableB : Variable
+    public class F : Variable
     {
         public override string ToString()
         {
-            return "B";
+            return "F";
         }
     }
 }

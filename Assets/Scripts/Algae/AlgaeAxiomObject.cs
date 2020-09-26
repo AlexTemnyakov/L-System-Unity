@@ -7,6 +7,6 @@ namespace Algae
 {
     public class AlgaeAxiomObject : AxiomObject
     {
-        public override List<Variable> Axiom { get; } = new List<Variable>() { new VariableA() };
+        public override List<Variable> Axiom { get; } = new List<Variable>() { new A() };
     }
 }

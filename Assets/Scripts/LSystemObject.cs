@@ -69,6 +69,7 @@ namespace LSystem
                 }
 
                 Debug.Log("Result:");
+                Debug.Log("Number of variables: " + variables.Count);
                 Debug.Log(result);
             }
         }

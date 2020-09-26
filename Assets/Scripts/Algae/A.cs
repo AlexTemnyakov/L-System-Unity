@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace FractalTree
+namespace Algae
 {
-    public class RightBracket : Variable
+    public class A : Variable
     {
         public override string ToString()
         {
-            return "]";
+            return "A";
         }
     }
 }
